@@ -39,3 +39,6 @@ int main(){
     printDigits(n); 
     return 0;
 }
+
+//homework vector of digits you have to convert it into number
+//string babaaar122389 print target = a target char kis kis position prr h index print kro sbka
