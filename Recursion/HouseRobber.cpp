@@ -25,3 +25,4 @@ int rob(vector<int>& nums){
     return ans;
     
 }
+//dicide and conquer problem
