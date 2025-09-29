@@ -1,0 +1,9 @@
+loose coupling -: when two or more data were stored and modified by many things it can be changed by somehow this is called loose coupling.
+
+Encapsuling -: kuchh chize dikhani h kuchh cheeze nhi dikhani h ye abstraction k type kehlati h wo sb 1 class k andar// encapsulation often to a mean achieve of abstraction by hiding something and exposing some neccessory things
+
+Inheritance -: parents thing in child having some of same thing both have is called inheritance
+
+boundling of data and method -: 
+
+abstraction -: 
