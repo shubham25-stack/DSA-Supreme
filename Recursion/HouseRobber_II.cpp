@@ -26,3 +26,4 @@ int rob(vector<int>& nums){
     int option2 = solve(nums,1,n-1);
     int ans = max(option1,option2)
 }
+//house robber 2,3,4 you have to do by yourself
