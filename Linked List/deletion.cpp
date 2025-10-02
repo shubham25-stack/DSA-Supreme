@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+
 class Node{
     public:
     int data;
@@ -16,6 +17,15 @@ class Node{
         this->next = NULL;
     }
 };
+int getLength(Node* head) {
+    Node* temp = head;
+    int length = 0;
+    while (temp != NULL) {
+        length++;
+        temp = temp->next;
+    }
+    return length;
+}
 
 void printLL(Node* head ){
     Node* temp=head;
@@ -67,17 +77,6 @@ void insertAtTail(Node* &head,Node* &tail,int data){
 
     }
 }
-
-// int getLength(Node* head) {
-//     Node* temp = head;
-//     int length = 0;
-//     while (temp != NULL) {
-//         length++;
-//         temp = temp->next;
-//     }
-//     return length;
-// }
-
 void insertAtPosition(Node* &head,Node* &tail, int data,int position){
     // if(position < 1){
     //     cout<<"Cannot insert please enter a valid position"<<endl;
@@ -115,9 +114,65 @@ void insertAtPosition(Node* &head,Node* &tail, int data,int position){
     }
 }
 
+ void deleteNode(Node* &head, Node* &tail,int position){
+        //empty linkedlist
+        if(head == NULL){
+            cout<<"Cannot delete, bcoz LL is empty"<<endl;
+            return;
+        }
+        if(head==tail){
+            Node* temp = head;
+            delete temp;
+            head = NULL;
+            tail = NULL;
+            return;
+        }
+        int length = getLength(head);
+        //delete from head
+        if(position == 1){
+            //first node ko delete krr do
+            Node* temp = head;
+            head = temp->next;
+            temp->next = NULL;
+            delete temp;
+
+        }
+        else if(position == length){
+            //last node ko delete krr do
+
+            //prev find kro
+            Node* prev = head;
+            while(prev->next != tail){
+                prev = prev -> next;
+            }
+            //prev node ka link null kro
+            prev -> next = NULL;
+            delete tail;
+            tail = prev;
+
+        }
+        else{
+            //middle me kisi v node ko delete krr do
+            //step1: set prev and curr
+            Node* prev = NULL;
+            Node* curr = head;
+            while (position != 1)
+            {
+                position--;
+                prev = curr;
+                curr = curr->next;
+            }
+            //prev k next me curr ka next add kro
+            prev->next = curr->next;
+
+            //step3: node isolate krdo
+            curr->next = NULL;
+            //step 4: delete node
+            delete curr;
+        }
+}
 
 int main(){
-
     Node* head = NULL;
     Node* tail = NULL;
 
@@ -127,29 +182,6 @@ int main(){
     insertAtTail(head,tail,20);
     insertAtPosition(head,tail,70,9);
     printLL(head);
-    //create a node
-    //Node a; //static node
-
-    // Node* first = new Node(10); //dynamically
-    // Node* second = new Node(20);
-    // Node* third = new Node(30);
-    // Node* fourth = new Node(40);
-    // Node* fifth = new Node(50);
-
-    // first->next = second;
-    // second->next=third;
-    // third->next=fourth;
-    // fourth->next=fifth;
-    // //link list created for example
-    // Node* head = first;
-    // Node* tail = fifth;
-    // cout<<"Printing the linked list"<<endl;
-    // printLL(head);
-
-    // insertAtTail(head,tail,600);
-    // printLL(head);    
-
-
-
-    return 0;
+    deleteNode(head,tail,3);
+    printLL(head);
 }
