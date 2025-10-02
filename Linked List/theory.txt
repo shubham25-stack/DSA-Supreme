@@ -1,0 +1,10 @@
+Linked list -: tum bss memory de do no matter kaha se doge it is an non-contigous memory
+
+interview -: os k andar storage k andar linked list kaha use aata h.?
+
+LL -: collection of nodes is called linked-list
+
+single linked list tab khatam hota h jab null aa jaye
+//Linked list is hindi// important
+linked list ka hamesa wrong case aata h kuchh because basic thing nhi test case faste h corner case k wajah se bas fix krne h usko
+
