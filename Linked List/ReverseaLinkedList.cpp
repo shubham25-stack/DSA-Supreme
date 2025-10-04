@@ -18,6 +18,21 @@ class Solution{
     }
 }
 
+//by recursion
+void usingrecursion(Node* prev, Node* curr){
+    //base case
+    if(curr == NULL){
+        return;
+    }
+    Node* nextNode = curr->next;
+    curr->next = prev;
+    prev= curr;
+    curr = nextNode;
+    //baki recursion sambhalega
+    Node* recursionAns = usingrecursion(prev,curr);
+    return recursionAns;
+}
+
 int main(){
 
     return 0;
