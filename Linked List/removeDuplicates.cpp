@@ -52,3 +52,5 @@ int main(){
     return 0;
 }
 ///duplicates in sorted ll
+
+//solve questions of linkedlist
