@@ -1,5 +1,5 @@
 #include <iostream>
-using namespace std;
+using namespace std; 
 
 struct Node {
     int data;
@@ -17,7 +17,7 @@ struct Node {
 void preOrderTraversal(Node* root) {
     if (root == NULL) {
         return;
-    }
+    } 
     cout << root->data << " ";
     preOrderTraversal(root->left);
     preOrderTraversal(root->right);
