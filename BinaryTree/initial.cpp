@@ -16,7 +16,7 @@ public:
 
 // function to create tree
 Node* createTree() {
-    int data;
+    int data;  
     cout << "Enter the value: ";
     cin >> data;
 
