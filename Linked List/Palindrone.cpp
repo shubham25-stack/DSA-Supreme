@@ -12,7 +12,7 @@ public:
         next = NULL;
     }
 };
-
+   
 class Solution {
 public:
     // Function to reverse the linked list using recursion
