@@ -7,7 +7,7 @@ int solve(stack<int> &st, int pos) {
     if (pos == 1) {
         return st.top(); //st.pop()
     }
-
+        
     int temp = st.top();
     st.pop();
 
