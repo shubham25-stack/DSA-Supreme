@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 using namespace std; 
 
 struct Node {
@@ -43,6 +44,26 @@ void postOrderTraversal(Node* root) {
     cout << root->data << " ";
 }
 
+void levelOrderTraversal(Node* root){
+    queue<Node*> q;
+    q.push(root);
+    q.push(NULL);
+
+    // asli traversal
+    while(!q.empty() ){
+        Node* front = q.front();
+        q.pop();
+
+        cout<<front->data<<" ";
+        if(front->left != NULL){ // IF(FRONT == NULL){} extra add on
+            q.push(front->left);  // cout<<endl; q.push(NULL); else 
+        }
+        if(front->right != NULL){
+            q.push(front->right);
+        }
+    }
+}
+
 int main() {
     Node* root = new Node(1);
     root->left = new Node(2);
@@ -62,5 +83,8 @@ int main() {
     postOrderTraversal(root);
     cout << endl;
 
+    cout<<" Level order traversal : ";
+    levelOrderTraversal(root);
+    cout<<endl; 
     return 0;
 }
