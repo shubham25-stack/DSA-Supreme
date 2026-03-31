@@ -121,7 +121,7 @@ int main(){
     }
 
     cout << endl;
-    cout<<"Boundry traversal is this"<<endl;
+    cout<<"this is Boundry traversal"<<endl;
     boundaryTraversal(root);
 
     return 0;
