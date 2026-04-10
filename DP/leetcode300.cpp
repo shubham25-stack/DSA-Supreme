@@ -18,12 +18,24 @@ public:
     int exclude = solveUsingMem(nums, curr+1, prev, dp);
 
     return dp[curr][prev+1] = max(include, exclude);
-}
+    }
 
-int usingBinarySearch(vector<int>& nums){
+    int usingBinarySearch(vector<int>& nums){
+        vector<int> ans;
+        ans.push_back(num[0]);
+        for(int i =i; i<num.size(); i++){
+            if(num[i] > ans.back()){
+                ans.push_back(num[i]);
+            }
+            else{
+                int index = lower_bound(ans.begin(),ans.end(), num[i]) - ans.begin();
+                ans[index] = num[i];
+            }
+        }
+        return ans.size();
+    }
+
     
-}
-
     int lengthOfLIS(vector<int>& nums) {
         // int curr = 0;
         // int prev = -1;
